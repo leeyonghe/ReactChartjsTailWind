@@ -50,21 +50,26 @@ function App() {
     labels,
     datasets: [
       {
-        label: "Dataset 1",
+        label: 'Dataset 1',
         data: labels.map(() => 1),
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
       {
-        label: "Dataset 2",
-        data: labels.map(() => 1),
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        label: 'Dataset 2',
+        data: labels.map(() => 2),
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],
   };
 
   return (
-    <div className="App">
-      <Bar options={options} data={data} />
+    <div className="App w-screen p-0 m-0 grid grid-cols-2">
+      <div>
+        <Bar options={options} data={data}/>
+      </div>
+      <div>
+        <Bar options={options} data={data}/>
+      </div>
     </div>
   );
 }
