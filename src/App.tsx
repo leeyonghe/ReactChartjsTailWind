@@ -50,14 +50,14 @@ function App() {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: "Dataset 1",
         data: labels.map(() => 1),
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
       {
-        label: 'Dataset 2',
+        label: "Dataset 2",
         data: labels.map(() => 2),
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
   };
@@ -65,10 +65,88 @@ function App() {
   return (
     <div className="App w-screen p-0 m-0 grid grid-cols-2">
       <div>
-        <Bar options={options} data={data}/>
+        <Bar options={options} data={data} />
       </div>
       <div>
-        <Bar options={options} data={data}/>
+        <Bar options={options} data={data} />
+      </div>
+      <div>
+        <Bar
+          options={{
+            indexAxis: "y" as const,
+            elements: {
+              bar: {
+                borderWidth: 2,
+              },
+            },
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "right" as const,
+              },
+              title: {
+                display: true,
+                text: "Chart.js Horizontal Bar Chart",
+              },
+            },
+          }}
+          data={{
+            labels,
+            datasets: [
+              {
+                label: "Dataset 1",
+                data: labels.map(() => 1),
+                borderColor: "rgb(255, 99, 132)",
+                backgroundColor: "rgba(255, 99, 132, 0.5)",
+              },
+              {
+                label: "Dataset 2",
+                data: labels.map(() => 2),
+                borderColor: "rgb(53, 162, 235)",
+                backgroundColor: "rgba(53, 162, 235, 0.5)",
+              },
+            ],
+          }}
+        />
+      </div>
+      <div>
+      <Bar
+          options={{
+            indexAxis: "y" as const,
+            elements: {
+              bar: {
+                borderWidth: 2,
+              },
+            },
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "right" as const,
+              },
+              title: {
+                display: true,
+                text: "Chart.js Horizontal Bar Chart",
+              },
+            },
+          }}
+          data={{
+            labels,
+            datasets: [
+              {
+                label: "Dataset 1",
+                data: labels.map(() => 1),
+                borderColor: "rgb(255, 99, 132)",
+                backgroundColor: "rgba(255, 99, 132, 0.5)",
+              },
+              {
+                label: "Dataset 2",
+                data: labels.map(() => 2),
+                borderColor: "rgb(53, 162, 235)",
+                backgroundColor: "rgba(53, 162, 235, 0.5)",
+              },
+            ],
+          }}
+        />
       </div>
     </div>
   );
