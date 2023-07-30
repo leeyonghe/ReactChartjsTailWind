@@ -172,23 +172,17 @@ function App() {
             datasets: [
               {
                 label: "Dataset 1",
-                data: labels.map(() =>
-                  3
-                ),
+                data: labels.map(() => 3),
                 backgroundColor: "rgb(255, 99, 132)",
               },
               {
                 label: "Dataset 2",
-                data: labels.map(() =>
-                  2
-                ),
+                data: labels.map(() => 2),
                 backgroundColor: "rgb(75, 192, 192)",
               },
               {
                 label: "Dataset 3",
-                data: labels.map(() =>
-                  1
-                ),
+                data: labels.map(() => 1),
                 backgroundColor: "rgb(53, 162, 235)",
               },
             ],
@@ -219,24 +213,114 @@ function App() {
             datasets: [
               {
                 label: "Dataset 1",
-                data: labels.map(() =>
-                  3
-                ),
+                data: labels.map(() => 3),
                 backgroundColor: "rgb(255, 99, 132)",
               },
               {
                 label: "Dataset 2",
-                data: labels.map(() =>
-                  2
-                ),
+                data: labels.map(() => 2),
                 backgroundColor: "rgb(75, 192, 192)",
               },
               {
                 label: "Dataset 3",
-                data: labels.map(() =>
-                  1
-                ),
+                data: labels.map(() => 1),
                 backgroundColor: "rgb(53, 162, 235)",
+              },
+            ],
+          }}
+        />
+      </div>
+      <div>
+        <Bar
+          options={{
+            plugins: {
+              title: {
+                display: true,
+                text: "Chart.js Bar Chart - Stacked",
+              },
+            },
+            responsive: true,
+            interaction: {
+              mode: "index" as const,
+              intersect: false,
+            },
+            scales: {
+              x: {
+                stacked: true,
+              },
+              y: {
+                stacked: true,
+              },
+            },
+          }}
+          data={{
+            labels,
+            datasets: [
+              {
+                label: "Dataset 1",
+                data: labels.map(() => 1),
+                backgroundColor: "rgb(255, 99, 132)",
+                stack: "Stack 0",
+              },
+              {
+                label: "Dataset 2",
+                data: labels.map(() => 2),
+                backgroundColor: "rgb(75, 192, 192)",
+                stack: "Stack 0",
+              },
+              {
+                label: "Dataset 3",
+                data: labels.map(() => 3),
+                backgroundColor: "rgb(53, 162, 235)",
+                stack: "Stack 1",
+              },
+            ],
+          }}
+        />
+      </div>
+      <div>
+        <Bar
+          options={{
+            plugins: {
+              title: {
+                display: true,
+                text: "Chart.js Bar Chart - Stacked",
+              },
+            },
+            responsive: true,
+            interaction: {
+              mode: "index" as const,
+              intersect: false,
+            },
+            scales: {
+              x: {
+                stacked: true,
+              },
+              y: {
+                stacked: true,
+              },
+            },
+          }}
+          data={{
+            labels,
+            datasets: [
+              {
+                label: "Dataset 1",
+                data: labels.map(() => 1),
+                backgroundColor: "rgb(255, 99, 132)",
+                stack: "Stack 0",
+              },
+              {
+                label: "Dataset 2",
+                data: labels.map(() => 2),
+                backgroundColor: "rgb(75, 192, 192)",
+                stack: "Stack 0",
+              },
+              {
+                label: "Dataset 3",
+                data: labels.map(() => 3),
+                backgroundColor: "rgb(53, 162, 235)",
+                stack: "Stack 1",
               },
             ],
           }}
